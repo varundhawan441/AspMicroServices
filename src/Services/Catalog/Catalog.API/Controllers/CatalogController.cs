@@ -46,9 +46,9 @@ namespace Catalog.API.Controllers
         [HttpGet]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         [ProducesResponseType(typeof(IEnumerable<Product>),(int)HttpStatusCode.OK)]
-        public async Task<ActionResult<IEnumerable<Product>>> GetProductByCategory(string Category)
+        public async Task<ActionResult<IEnumerable<Product>>> GetProductByCategory(string category)
         {
-            var product = await productRepository.GetProductByCategory(Category);
+            var product = await productRepository.GetProductByCategory(category);
             return Ok(product);
         } 
 
