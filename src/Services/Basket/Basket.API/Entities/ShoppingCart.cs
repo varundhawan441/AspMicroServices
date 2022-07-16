@@ -5,7 +5,7 @@ namespace Basket.API.Entities
     public class ShoppingCart
     {
         public string UserName { get; set; }
-        public List<ShoppingCartItem> Item = new List<ShoppingCartItem>();
+        public List<ShoppingCartItem> Item { get; set; } = new List<ShoppingCartItem>();
 
         public ShoppingCart()
         {
