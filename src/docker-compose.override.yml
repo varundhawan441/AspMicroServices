@@ -27,6 +27,17 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data/
 
+  pgAdmin:
+    container_name: pgAdmin
+    environment:
+     - PGADMIN_DEFAULT_EMAIL=admin@pg.com
+     - PGADMIN_DEFAULT_PASSWORD=admin1234
+    restart: always
+    ports:
+      - "5050:80"
+    volumes:
+      - pgadmin_data:/root/.pgadmin
+
   portainer:
     container_name: portainer
     restart: always
@@ -36,6 +47,8 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - portainer_data:/data
+    #USER=admin
+    #Pass=V.Dkochar@0122
 
   catalog.api:
     container_name: catalog.api
